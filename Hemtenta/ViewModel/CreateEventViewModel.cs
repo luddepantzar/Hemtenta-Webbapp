@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace Hemtenta.ViewModel
 {
-    public class CreateEventReviewViewModel
+    public class CreateEventViewModel
     {
         public Event Events { get; set; }
         public UserIntrest Userintrests { get; set; }
 
-        public CreateEventReviewViewModel(Event events)
+        public CreateEventViewModel(Event events)
         {
             Events = events;
         }
