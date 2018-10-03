@@ -48,7 +48,7 @@ namespace Hemtenta.Controllers
                 return View();
             }
 
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("Index", "Event");
         }
 
         public IActionResult Register()

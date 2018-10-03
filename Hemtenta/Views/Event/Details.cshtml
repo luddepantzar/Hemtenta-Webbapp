@@ -1,0 +1,19 @@
+﻿@model Event
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>@Model.Title</h2>
+
+<div class="row">
+    <div class="col-md-3">
+        <img class="img-responsive" src="@Model.ImgUrl" alt="@Model.Title" />
+    </div>
+    <div class="col col-md-9">
+        <p class="col-md-8">@Model.Description</p>
+    </div>
+</div>
+
+@Html.Partial("MovieReviewsPartial", Model.Reviews)
+
+@Html.Partial("CreateMovieReviewPartial", new CreateMovieReviewPartialViewModel(Model))

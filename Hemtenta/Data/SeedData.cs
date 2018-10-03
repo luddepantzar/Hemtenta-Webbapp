@@ -58,12 +58,5 @@ namespace Hemtenta.Data
                 Date = new DateTime(2019,01,15)
             }
         };
-        public static AppUser[] user =
-        {
-            new AppUser
-            {
-                Id = 1
-            }
-        };
     }
 }
