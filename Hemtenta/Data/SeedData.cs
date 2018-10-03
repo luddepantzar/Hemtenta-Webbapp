@@ -13,7 +13,8 @@ namespace Hemtenta.Data
             new UserIntrest
             {
                 Id = 1,
-                UserName = "Ludwig"
+                UserName = "Ludwig",
+                EventId = 1
             }
         };
 

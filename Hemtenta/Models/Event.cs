@@ -15,7 +15,6 @@ namespace Hemtenta.Models
         public string ImgUrl { get; set; }
         public int ReadCount { get; set; }
 
-        //public virtual Genre Genre { get; set; }
         public virtual List<UserIntrest> UserIntrests { get; set; }
     }
 }
