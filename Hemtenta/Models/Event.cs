@@ -16,6 +16,6 @@ namespace Hemtenta.Models
         public int ReadCount { get; set; }
 
         //public virtual Genre Genre { get; set; }
-        public virtual List<UserIntrest> Reviews { get; set; }
+        public virtual List<UserIntrest> UserIntrests { get; set; }
     }
 }

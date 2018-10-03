@@ -1,14 +1,12 @@
-﻿@model List<Review>
+﻿@model List<UserIntrest>
 
 
-@foreach (Review review in Model)
+@foreach (UserIntrest userinterest in Model)
 {
     <div class="col col-md-12">
         <blockquote>
-            <p>@review.Data</p>
-            <h5>@review.Score / 10</h5>
-            <footer>@review.Email<cite title="@review.Email"></cite></footer>
-            <p><a asp-action="Delete" asp-controller="Reviews" asp-route-id="@review.Id" class="btn btn-danger"> Ta bort</a></p>
+            <h5>@userinterest.UserName</h5>
+            <p><a asp-action="Delete" asp-controller="Reviews" asp-route-id="@userinterest.Id" class="btn btn-danger"> Ta bort</a></p>
         </blockquote>
     </div>
 }

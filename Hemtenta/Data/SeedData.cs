@@ -8,14 +8,12 @@ namespace Hemtenta.Data
 {
     public class SeedData
     {
-        public static UserIntrest[] review =
+        public static UserIntrest[] userintrests =
         {
             new UserIntrest
             {
                 Id = 1,
-                Email = "ludde.pantzar@outlook.com",
-                Data = "Bästa evenemanget jag vart på.",
-                Score = 10
+                UserName = "Ludwig"
             }
         };
 

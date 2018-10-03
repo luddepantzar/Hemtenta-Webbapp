@@ -33,7 +33,7 @@ namespace Hemtenta.Controllers
         {
             Event model = db.Events
                 .Where(m => m.Id == id)
-                .Include(m => m.Reviews)
+                .Include(m => m.UserIntrests)
                 .FirstOrDefault();
 
             return View(model);
