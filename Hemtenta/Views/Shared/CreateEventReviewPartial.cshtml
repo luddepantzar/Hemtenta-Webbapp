@@ -2,17 +2,13 @@
 
 <div class="row">
     <div class="col col-md-4">
-        <h2>Review @Model.events.Title</h2>
+        <h2>Review @Model.Events.Title</h2>
 
         <form asp-controller="UserIntrest" asp-action="Create" method="post">
-            <div class="form-group">
-                <label asp-for="userintrests.UserName"></label>
-                <input asp-for="userintrests.UserName" class="form-control" />
-            </div>
 
-            <input type="hidden" asp-for="userintrests.EventId" value="@Model.events.Id" />
+            <input type="hidden" asp-for="Userintrests.EventId" value="@Model.Events.Id" />
 
-            <input type="submit" class="btn btn-success" />
+            <input type="submit" class="btn btn-success" value="Intresserad"/>
 
         </form>
     </div>

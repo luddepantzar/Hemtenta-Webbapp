@@ -1,12 +1,14 @@
 ﻿@model List<UserIntrest>
 
+<hr />
+
+<h1>Intresserade</h1>
 
 @foreach (UserIntrest userinterest in Model)
 {
     <div class="col col-md-12">
         <blockquote>
             <h5>@userinterest.UserName</h5>
-            <p><a asp-action="Delete" asp-controller="Reviews" asp-route-id="@userinterest.Id" class="btn btn-danger"> Ta bort</a></p>
         </blockquote>
     </div>
 }
@@ -15,6 +17,6 @@
 {
     <div class="col col-md-12">
         <hr />
-        <p>Inga har skrivit up sit på detta event...</p>
+        <p>Inga har skrivit up sit på detta Event...</p>
     </div>
 }

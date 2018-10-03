@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Hemtenta.Data;
 using Hemtenta.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Hemtenta.Controllers
@@ -17,13 +18,20 @@ namespace Hemtenta.Controllers
             this.db = db;
         }
 
-        public IActionResult Create(UserIntrest userintrest)
+        [Authorize, HttpPost]
+        public IActionResult Create(UserIntrest userintrests)
         {
+            var loggedUser = User.Identity;
 
-            db.UserIntrests.Add(userintrest);
+            var user = new UserIntrest();
+            user.EventId = userintrests.EventId;
+            user.UserName = loggedUser.Name;
+
+            db.UserIntrests.Add(user);
             db.SaveChanges();
 
-            return RedirectToAction("Details", "Event", new { id = userintrest.EventId });
+            return RedirectToAction("Details", "Event", new { id = userintrests.EventId });
+            //return RedirectToAction("Index", "Event");
         }
     }
 }
