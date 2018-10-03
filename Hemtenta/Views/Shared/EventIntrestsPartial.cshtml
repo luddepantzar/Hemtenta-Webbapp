@@ -7,7 +7,14 @@
 {
     <div class="col col-md-12">
         <blockquote>
-            <h5>@userinterest.UserName</h5>
+            @if (userinterest.Owner)
+            {
+            <h4 class="text-danger">@userinterest.UserName - ägare</h4>
+            }
+            else
+            {
+                <h5>@userinterest.UserName</h5>
+            }
         </blockquote>
     </div>
 }
