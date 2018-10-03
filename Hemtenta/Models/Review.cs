@@ -18,6 +18,5 @@ namespace Hemtenta.Models
 
         [Range(1, 10), Required]
         public int Score { get; set; }
-
     }
 }

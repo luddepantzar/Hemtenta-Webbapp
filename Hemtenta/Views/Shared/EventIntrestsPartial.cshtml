@@ -1,4 +1,22 @@
-﻿
-@*
-    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿@model List<Review>
+
+
+@foreach (Review review in Model)
+{
+    <div class="col col-md-12">
+        <blockquote>
+            <p>@review.Data</p>
+            <h5>@review.Score / 10</h5>
+            <footer>@review.Email<cite title="@review.Email"></cite></footer>
+            <p><a asp-action="Delete" asp-controller="Reviews" asp-route-id="@review.Id" class="btn btn-danger"> Ta bort</a></p>
+        </blockquote>
+    </div>
+}
+
+@if (Model.Count == 0)
+{
+    <div class="col col-md-12">
+        <hr />
+        <p>Inga har skrivit up sit på detta event...</p>
+    </div>
+}
