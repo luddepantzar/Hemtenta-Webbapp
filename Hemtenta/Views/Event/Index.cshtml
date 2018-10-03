@@ -1,0 +1,44 @@
+﻿@model List<Event>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Movies</h1>
+<div class="row mb-5">
+    <form method="get" asp-action="Index" asp-controller="Event" class="col col-md-11">
+        <input type="text" name="Filter" value="" />
+        <input type="submit" value="Serch" class="btn btn-default" />
+    </form>
+    <div class="col col-md-1">
+        <a asp-Controller="Event" asp-action="Create" class="btn btn-primary">Create</a>
+    </div>
+</div>
+
+<hr />
+
+@foreach (Event events in Model)
+{
+    <div class="col-sm-4 col-md-3">
+        <div class="thumbnail">
+            <img src="@events.ImgUrl" alt="...">
+            <div class="caption">
+                <h3>@events.Title</h3>
+                <p>@events.Description</p>
+                <ul class="list-group">
+                    <li class="list-group-item">Location: @events.Location</li>
+                    <li class="list-group-item">Date: @events.Date</li>
+                </ul>
+                <hr />
+                <div class="row">
+                    <div class="col-md-9">
+                        <p><a class="btn btn-success" asp-controller="Event" asp-action="Details" asp-route-id="@events.Id">Läs mer</a></p>
+                    </div>
+                    <div class="col-md-3">
+                        <a asp-controller="Event" asp-action="Delete" asp-route-id="@events.Id" class="btn btn-danger"><i class="far fa-trash-alt"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+

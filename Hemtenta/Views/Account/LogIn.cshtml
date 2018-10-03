@@ -1,0 +1,25 @@
+﻿@model LoginRequestObj
+@{
+    ViewData["Title"] = "LogIn";
+}
+
+<h2>LogIn</h2>
+
+<div class="row">
+    <form class="col col-md-6" asp-controller="Account" asp-action="LogIn" method="post">
+        <div class="form-group">
+            <label asp-for="UserName"></label>
+            <input asp-for="UserName" class="form-control" />
+            <span asp-validation-for="UserName" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Password"></label>
+            <input asp-for="Password" class="form-control" />
+            <span asp-validation-for="Password" class="text-danger"></span>
+        </div>
+
+        <input type="submit" class="btn btn-success" value="Register" />
+    </form>
+</div>
+
