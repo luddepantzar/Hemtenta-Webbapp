@@ -46,12 +46,22 @@ namespace Hemtenta.Controllers
             return View();
         }
 
-        [HttpPost]
+        [HttpPost, Authorize]
         public IActionResult Create(Event events)
         {
+            var loggedUser = User.Identity;
+
+            var user = new UserIntrest();
+            user.EventId = events.Id;
+            user.UserName = loggedUser.Name;
+            user.Owner = true;
+
+            var list = new List<UserIntrest>();
+            list.Add(user);
+
+            events.UserIntrests = list;
 
             db.Events.Add(events);
-
             db.SaveChanges();
 
             return RedirectToAction("Index");
