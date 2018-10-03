@@ -10,7 +10,7 @@ namespace Hemtenta.Data
 {
     public class DataBaseContext : IdentityDbContext<AppUser>
     {
-        public DbSet<Review> Reviews { get; set; }
+        public DbSet<UserIntrest> Reviews { get; set; }
         public DbSet<Event> Events { get; set; }
 
         public DataBaseContext(DbContextOptions<DataBaseContext> options) : base(options)
@@ -22,7 +22,7 @@ namespace Hemtenta.Data
         {
             base.OnModelCreating(modelBuilder);
 
-            modelBuilder.Entity<Review>().HasData(SeedData.review);
+            modelBuilder.Entity<UserIntrest>().HasData(SeedData.review);
             modelBuilder.Entity<Event>().HasData(SeedData.events);
         }
     }

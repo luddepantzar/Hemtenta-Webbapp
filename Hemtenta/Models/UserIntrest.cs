@@ -6,18 +6,11 @@ using System.Threading.Tasks;
 
 namespace Hemtenta.Models
 {
-    public class Review
+    public class UserIntrest
     {
         public int Id { get; set; }
 
-        [DataType(DataType.EmailAddress), Required]
-        public string Email { get; set; }
-
         [MaxLength(250), Required]
         public string Data { get; set; }
-
-        [Range(1, 10), Required]
-        public int Score { get; set; }
-
     }
 }
