@@ -1,4 +1,5 @@
 ﻿using Hemtenta.Models;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -7,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Hemtenta.Data
 {
-    public class DataBaseContext : DbContext
+    public class DataBaseContext : IdentityDbContext<AppUser>
     {
         public DbSet<Review> Reviews { get; set; }
         public DbSet<Event> Events { get; set; }
