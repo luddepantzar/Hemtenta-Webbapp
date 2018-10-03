@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Hemtenta.Data;
 using Hemtenta.Models;
 using Hemtenta.RequestObj;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -38,7 +39,8 @@ namespace Hemtenta.Controllers
 
             return View(model);
         }
-
+        
+        [Authorize]
         public IActionResult Create()
         {
             return View();
