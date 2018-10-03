@@ -8,9 +8,9 @@ namespace Hemtenta.Data
 {
     public class SeedData
     {
-        public static Review[] review =
+        public static UserIntrest[] review =
         {
-            new Review
+            new UserIntrest
             {
                 Id = 1,
                 Email = "ludde.pantzar@outlook.com",

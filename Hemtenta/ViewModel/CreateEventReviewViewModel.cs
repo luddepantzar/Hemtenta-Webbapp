@@ -9,7 +9,7 @@ namespace Hemtenta.ViewModel
     public class CreateEventReviewViewModel
     {
         public Event events { get; set; }
-        public Review reviews { get; set; }
+        public UserIntrest reviews { get; set; }
 
         public CreateEventReviewViewModel(Event Events)
         {
