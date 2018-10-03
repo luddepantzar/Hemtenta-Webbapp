@@ -1,10 +1,9 @@
-﻿@model List<UserIntrest>
-
+﻿@model EventIntrestViewModel
 <hr />
 
 <h1>Intresserade</h1>
 
-@foreach (UserIntrest userinterest in Model)
+@foreach (UserIntrest userinterest in Model.userintrests)
 {
     <div class="col col-md-12">
         <blockquote>
@@ -13,7 +12,7 @@
     </div>
 }
 
-@if (Model.Count == 0)
+@if (Model.userintrests.Count == 0)
 {
     <div class="col col-md-12">
         <hr />

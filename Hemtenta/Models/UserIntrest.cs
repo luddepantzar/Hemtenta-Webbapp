@@ -13,6 +13,8 @@ namespace Hemtenta.Models
         [MaxLength(250), Required]
         public string UserName { get; set; }
 
+        public Boolean Owner { get; set; }
+
         public virtual int EventId { get; set; }
         public virtual Event Event { get; set; }
     }

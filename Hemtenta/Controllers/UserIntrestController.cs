@@ -26,12 +26,12 @@ namespace Hemtenta.Controllers
             var user = new UserIntrest();
             user.EventId = userintrests.EventId;
             user.UserName = loggedUser.Name;
+            user.Owner = false;
 
             db.UserIntrests.Add(user);
             db.SaveChanges();
 
             return RedirectToAction("Details", "Event", new { id = userintrests.EventId });
-            //return RedirectToAction("Index", "Event");
         }
     }
 }
